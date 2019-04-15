@@ -5,36 +5,47 @@
     ViewData["Title"] = "Delete";
 }
 
-<h2>Delete</h2>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>LISTA</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.LISTA.Item)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.LISTA.Item)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.LISTA.DeadLine)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.LISTA.DeadLine)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.LISTA.Info)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.LISTA.Info)
-        </dd>
-    </dl>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <h2> @Html.DisplayFor(model => model.LISTA.Item) <small>Será removido da sua lista</small> </h2>
+
+
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.LISTA.Item)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LISTA.Item)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.LISTA.DeadLine)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LISTA.DeadLine)
+                </dd>
+                <dt>
+                    @Html.DisplayNameFor(model => model.LISTA.Info)
+                </dt>
+                <dd>
+                    @Html.DisplayFor(model => model.LISTA.Info)
+                </dd>
+            </dl>
+        </div>
+        <div class="col-lg-6 controle_btn">
+            <form method="post">
+                <input type="hidden" asp-for="LISTA.ID" />
+                <input type="submit" value="Deletar" class="btn btn-default float-left" /> 
+                <a asp-page="./Index" class="btn btn-default float-left">Cancelar</a>
+            </form>
+        </div>
+    </div>
     
-    <form method="post">
-        <input type="hidden" asp-for="LISTA.ID" />
-        <input type="submit" value="Delete" class="btn btn-default" /> |
-        <a asp-page="./Index">Back to List</a>
-    </form>
+
+</div>
+<div>
+    <img src="https://picsum.photos/790/500/?random" alt="Imagem" class="img-responsive" />
 </div>

@@ -35,3 +35,19 @@ body {
         display: none;
     }
 }
+
+.float-right{
+    float: right;
+}
+.space-right {
+    margin-right: 5px;
+}
+
+.btn-white {
+    color: white;
+    text-transform: uppercase;
+}
+
+.controle_btn{
+    padding: 3em;
+}

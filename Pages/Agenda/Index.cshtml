@@ -5,11 +5,18 @@
     ViewData["Title"] = "Index";
 }
 
-<h2>Index</h2>
+<h2>Minha Agenda</h2>
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
+<div class="float-right">
+    <button class="btn btn-button btn-primary ">
+        <a asp-page="Create">
+            <span class="btn-white">
+                <span class="glyphicon glyphicon-plus-sign" aria-hidden="true">
+                </span>
+            </span>
+        </a>
+    </button>
+</div>
 <table class="table">
     <thead>
         <tr>
@@ -32,29 +39,51 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.AGENDA) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DDD)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Celular)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Empresa)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.AGENDA)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    <a href="mailto:@Html.DisplayFor(modelItem => item.Email)"> @Html.DisplayFor(modelItem => item.Email) </a>
+</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DDD)
+                </td>
+                <td>
+                    <a href="https://wa.me/55 @Html.DisplayFor(modelItem => item.DDD)@Html.DisplayFor(modelItem => item.Celular)"> @Html.DisplayFor(modelItem => item.Celular) </a>
+</td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Empresa)
+                </td>
+                <td class="float-right">
+                    <button class="btn btn-button btn-primary ">
+                        <a asp-page="./Edit" asp-route-id="@item.ID">
+                            <span class="btn-white">
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true">
+                                </span>
+                            </span>
+                        </a>
+                    </button>
+                    <button class="btn btn-button btn-primary ">
+                        <a asp-page="./Details" asp-route-id="@item.ID">
+                            <span class="btn-white">
+                                <span class="glyphicon glyphicon-info-sign" aria-hidden="true">
+                                </span>
+                            </span>
+                        </a>
+                    </button>
+                    <button class="btn btn-button btn-primary ">
+                        <a asp-page="./Delete" asp-route-id="@item.ID">
+                            <span class="btn-white">
+                                <span class="glyphicon glyphicon-remove-sign" aria-hidden="true">
+                                </span>
+                            </span>
+                        </a>
+                    </button>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

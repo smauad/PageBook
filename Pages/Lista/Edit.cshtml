@@ -5,11 +5,14 @@
     ViewData["Title"] = "Edit";
 }
 
-<h2>Edit</h2>
+<h2>Editor de Lista</h2>
 
-<h4>LISTA</h4>
+
 <hr />
 <div class="row">
+    <div class="col-lg-8">
+        <img src="https://picsum.photos/700/500/?random" alt="Imagem" class="img-responsive" />
+    </div>
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -30,15 +33,18 @@
                 <span asp-validation-for="LISTA.Info" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-default float-right" />
+            </div>
+            <div>
+                <a asp-page="./Index" class="btn btn-default float-right">Cancelar</a>
             </div>
         </form>
     </div>
+
 </div>
 
-<div>
-    <a asp-page="./Index">Back to List</a>
-</div>
+
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
