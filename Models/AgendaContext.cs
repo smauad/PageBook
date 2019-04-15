@@ -4,7 +4,7 @@ namespace RazorPagesAgenda.Models
 {
     public class AgendaContext : DbContext
     {
-        public AgendaContext(DbContextOptions<AgendaContextt> options)
+        public AgendaContext(DbContextOptions<AgendaContext> options)
             : base(options)
         {
         }

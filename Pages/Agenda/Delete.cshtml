@@ -1,0 +1,52 @@
+@page
+@model PageBook.Pages.Agenda.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>AGENDA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AGENDA.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AGENDA.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AGENDA.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AGENDA.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AGENDA.DDD)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AGENDA.DDD)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AGENDA.Celular)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AGENDA.Celular)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AGENDA.Empresa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AGENDA.Empresa)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="AGENDA.ID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

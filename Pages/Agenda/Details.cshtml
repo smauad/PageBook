@@ -1,0 +1,49 @@
+@page
+@model PageBook.Pages.Agenda.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AGENDA</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AGENDA.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AGENDA.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AGENDA.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AGENDA.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AGENDA.DDD)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AGENDA.DDD)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AGENDA.Celular)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AGENDA.Celular)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AGENDA.Empresa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.AGENDA.Empresa)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.AGENDA.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
