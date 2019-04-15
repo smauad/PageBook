@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RazorPagesLista.Models;
+using RazorPagesAgenda.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace PageBook
@@ -36,6 +37,9 @@ namespace PageBook
 
             services.AddDbContext<ListaContext>(options =>
         options.UseSqlite(Configuration.GetConnectionString("ListaContext")));
+
+            services.AddDbContext<AgendaContext>(options =>
+        options.UseSqlite(Configuration.GetConnectionString("AgendaContext")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
