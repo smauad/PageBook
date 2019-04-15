@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RazorPagesLista.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace PageBook
 {
@@ -31,6 +33,9 @@ namespace PageBook
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+
+            services.AddDbContext<ListaContext>(options =>
+        options.UseSqlite(Configuration.GetConnectionString("ListaContext")));
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
